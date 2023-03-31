@@ -1,0 +1,11 @@
+{
+  "root": true,
+  "plugins": ["@faire/eslint-plugin"],
+  "extends": ["plugin:@faire/eslint-plugin/recommended"],
+  "parserOptions": {
+    "project": ["tsconfig.json"]
+  },
+  "rules": {
+    "import/order": "off"
+  }
+}

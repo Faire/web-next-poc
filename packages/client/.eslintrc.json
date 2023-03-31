@@ -1,0 +1,19 @@
+{
+  "root": true,
+  "plugins": [
+    "@faire/eslint-plugin",
+    "react-prefer-function-component",
+    "testing-library"
+  ],
+  "extends": [
+    "plugin:@faire/eslint-plugin/recommended",
+    "next/core-web-vitals"
+  ],
+  "parserOptions": {
+    "project": ["tsconfig.json"]
+  },
+  "rules": {
+    "import/order": "off",
+    "react-prefer-function-component/react-prefer-function-component": "error"
+  }
+}

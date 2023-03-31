@@ -1,0 +1,14 @@
+{
+  "name": "web-next-poc",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "yarn workspace client build",
+    "dev": "yarn workspace server dev",
+    "start": "yarn workspace server start"
+  }
+}

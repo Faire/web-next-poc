@@ -1,0 +1,8 @@
+node_modules
+build
+scripts
+coverage
+build-tools
+config
+lib
+static
