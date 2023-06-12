@@ -1,0 +1,12 @@
+{
+  "importOrder": [
+    "<THIRD_PARTY_MODULES>",
+    "^@/(.*)$",
+    "^\\.\\./(.*)$",
+    "^[./]"
+  ],
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": false,
+  "importOrderCaseInsensitive": true,
+  "plugins": ["prettier-plugin-packagejson"]
+}

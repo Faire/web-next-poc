@@ -1,0 +1,60 @@
+export const ALLOWED_SPACING = [
+  "0px",
+  "1px",
+  "2px",
+  "4px",
+  "8px",
+  "16px",
+  "20px",
+  "24px",
+  "32px",
+  "40px",
+  "48px",
+  "56px",
+  "64px",
+  "72px",
+  "80px",
+  "96px",
+  "112px",
+  "128px",
+  "144px",
+  "160px",
+  "184px",
+  "240px",
+  "272px",
+  "360px",
+  "100%",
+  "50%",
+] as const;
+
+export const ALLOWED_MARGINS = [
+  "-2px",
+  "-4px",
+  "-8px",
+  "-16px",
+  "-24px",
+  "-32px",
+  "-40px",
+  "-48px",
+  "-56px",
+  "-64px",
+  "-96px",
+  "auto",
+  ...ALLOWED_SPACING,
+] as const;
+
+export const ALLOWED_SIZE_VALUES = [
+  ...ALLOWED_SPACING,
+  "auto",
+  "100%",
+  "fit-content",
+  "max-content",
+  "min-content",
+] as const;
+
+export const ALLOWED_BORDER_RADIUS_VALUES = [
+  "100%",
+  "50%",
+  "4px",
+  "8px",
+] as const;

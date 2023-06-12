@@ -1,3 +1,26 @@
 {
-  "extends": "next/core-web-vitals"
+  "root": true,
+  "plugins": [
+    "@faire/eslint-plugin",
+    "react-prefer-function-component",
+    "testing-library"
+  ],
+  "extends": [
+    "plugin:@faire/eslint-plugin/recommended",
+    "next/core-web-vitals"
+  ],
+  "parserOptions": {
+    "project": ["tsconfig.json"]
+  },
+  "rules": {
+    "import/order": "off"
+  },
+  "overrides": [
+    {
+      "files": ["src/pages/**/*.tsx"],
+      "rules": {
+        "@faire/no-re-exports": "off"
+      }
+    }
+  ]
 }
