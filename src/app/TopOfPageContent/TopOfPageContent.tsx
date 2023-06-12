@@ -10,6 +10,12 @@ import * as styles from "./styles.css";
 export const TopOfPageContent: React.FC = () => {
   return (
     <div className={styles.container}>
+      <div className={styles.banner}>
+        <Typography color="graphite">
+          Shop wholesale online from over 100,000 brands.{" "}
+          <Link href="/">Sign up</Link>
+        </Typography>
+      </div>
       <header className={styles.header}>
         <div className={styles.content}>
           <Link href="/">

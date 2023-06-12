@@ -1,6 +1,7 @@
 import { Action } from "@faire/design-tokens";
 import { style } from "@vanilla-extract/css";
 
+import * as a from "@/ui/Atoms/Atoms";
 import { cn } from "@/ui/cn";
 import { PrimaryButton } from "@/ui/slate/Button.css";
 
@@ -12,6 +13,19 @@ export const container = style({
   zIndex: Z_INDEX,
   transition: "transform 200ms linear",
 });
+
+export const banner = cn(
+  a.position("relative"),
+  a.display("flex"),
+  a.justifyContent("center"),
+  a.alignItems("center"),
+  a.backgroundColor("ivory"),
+  a.width("100%"),
+  a.height("48px"),
+  style({
+    zIndex: Z_INDEX,
+  })
+);
 
 export const header = style({
   position: "relative",

@@ -48,7 +48,7 @@ export const Typography: React.FC<
   HeadingProps | SpanProps | ParagraphProps
   // eslint-disable-next-line complexity
 > = ({
-  as = "p",
+  as,
   variant = "paragraphSansRegular",
   color = "faireBlack",
   align,
@@ -60,7 +60,6 @@ export const Typography: React.FC<
   const className = cn(
     styles[variant],
     FONT_CLASSNAMES[variant],
-    a.color(color),
     a.color(color),
     align && responsiveAtom("textAlign", align),
     truncate && a.lineClamp(1),

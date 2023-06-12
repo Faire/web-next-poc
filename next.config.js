@@ -7,6 +7,9 @@ const nextConfig = {
     typedRoutes: true,
   },
   transpilePackages: ["@faire/web"],
+  images: {
+    domains: ["cdn.faire.com"],
+  },
 };
 
 module.exports = withVanillaExtract(nextConfig);

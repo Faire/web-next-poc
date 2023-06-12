@@ -5,6 +5,7 @@ export const displayXLSerifRegular = style({
   fontSize: "72px",
   lineHeight: "86px",
   letterSpacing: "0",
+  margin: 0,
 });
 
 export const displayLSerifRegular = style({
@@ -12,6 +13,7 @@ export const displayLSerifRegular = style({
   fontSize: "52px",
   lineHeight: "64px",
   letterSpacing: "0",
+  margin: 0,
 });
 
 export const displayMSerifRegular = style({
@@ -19,6 +21,7 @@ export const displayMSerifRegular = style({
   fontSize: "38px",
   lineHeight: "50px",
   letterSpacing: "0",
+  margin: 0,
 });
 
 export const displaySSerifRegular = style({
@@ -26,6 +29,7 @@ export const displaySSerifRegular = style({
   fontSize: "30px",
   lineHeight: "38px",
   letterSpacing: "0",
+  margin: 0,
 });
 
 export const displaySSansRegular = style({
@@ -33,6 +37,7 @@ export const displaySSansRegular = style({
   fontSize: "30px",
   lineHeight: "38px",
   letterSpacing: "0.15px",
+  margin: 0,
 });
 
 export const displaySSansSemiBold = style({
@@ -40,6 +45,7 @@ export const displaySSansSemiBold = style({
   fontSize: "30px",
   lineHeight: "38px",
   letterSpacing: "0.15px",
+  margin: 0,
 });
 
 export const pageHeaderSerifRegular = style({
@@ -47,6 +53,7 @@ export const pageHeaderSerifRegular = style({
   fontSize: "22px",
   lineHeight: "32px",
   letterSpacing: "0",
+  margin: 0,
 });
 
 export const sectionHeaderSansMedium = style({
@@ -54,6 +61,7 @@ export const sectionHeaderSansMedium = style({
   fontSize: "22px",
   lineHeight: "32px",
   letterSpacing: "0.15px",
+  margin: 0,
 });
 
 export const subheadingSansMedium = style({
@@ -61,6 +69,7 @@ export const subheadingSansMedium = style({
   fontSize: "18px",
   lineHeight: "26px",
   letterSpacing: "0.15px",
+  margin: 0,
 });
 
 export const subheadingSansRegular = style({
@@ -68,6 +77,7 @@ export const subheadingSansRegular = style({
   fontSize: "18px",
   lineHeight: "26px",
   letterSpacing: "0.15px",
+  margin: 0,
 });
 
 export const paragraphSansMedium = style({
@@ -75,6 +85,7 @@ export const paragraphSansMedium = style({
   fontSize: "14px",
   lineHeight: "20px",
   letterSpacing: "0.15px",
+  margin: 0,
 });
 
 export const paragraphSansRegular = style({
@@ -82,6 +93,7 @@ export const paragraphSansRegular = style({
   fontSize: "14px",
   lineHeight: "20px",
   letterSpacing: "0.15px",
+  margin: 0,
 });
 
 export const labelSansRegular = style({
@@ -89,6 +101,7 @@ export const labelSansRegular = style({
   fontSize: "12px",
   lineHeight: "16px",
   letterSpacing: "0.15px",
+  margin: 0,
 });
 
 export const labelSansMedium = style({
@@ -96,4 +109,5 @@ export const labelSansMedium = style({
   fontSize: "12px",
   lineHeight: "16px",
   letterSpacing: "0.15px",
+  margin: 0,
 });
