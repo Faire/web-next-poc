@@ -41,7 +41,7 @@ export const SearchBar: React.FC = () => {
   }, [pathname, setValue]);
 
   const onFocus = () => setIsFocused(true);
-  const onBlur = () => setTimeout(() => setIsFocused(false), 100);
+  const onBlur = () => setTimeout(() => setIsFocused(false), 120);
 
   const onChange = (event: React.ChangeEvent<HTMLInputElement>) =>
     setValue(event.target.value);

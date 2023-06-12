@@ -20,6 +20,7 @@ export const suggestion = cn(
   a.display("flex"),
   a.alignItems("center"),
   a.paddingX("16px"),
+  a.paddingY("8px"),
   style({
     textDecoration: "none",
     ":hover": {
