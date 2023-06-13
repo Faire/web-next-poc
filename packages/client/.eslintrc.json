@@ -15,5 +15,13 @@
   "rules": {
     "import/order": "off",
     "react-prefer-function-component/react-prefer-function-component": "error"
-  }
+  },
+  "overrides": [
+    {
+      "files": ["src/pages/**/*.tsx"],
+      "rules": {
+        "@faire/no-re-exports": "off"
+      }
+    }
+  ]
 }

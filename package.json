@@ -7,8 +7,13 @@
     "packages/*"
   ],
   "scripts": {
-    "build": "yarn workspace client build",
-    "dev": "yarn workspace server dev",
-    "start": "yarn workspace server start"
+    "build": "yarn build:shared && concurrently 'yarn build:server' 'yarn build:client'",
+    "build:client": "yarn workspace @web-next-poc/client build",
+    "build:server": "yarn workspace @web-next-poc/server build",
+    "dev": "yarn workspace @web-next-poc/server dev",
+    "start": "yarn workspace @web-next-poc/server start"
+  },
+  "devDependencies": {
+    "concurrently": "^8.0.1"
   }
 }

@@ -1,59 +1,19 @@
-import cookieParser from "cookie-parser";
 import express from "express";
-import fs from "fs";
-import next from "next";
-// eslint-disable-next-line import/no-unassigned-import
-import "zone.js";
+import { createProxyMiddleware } from "http-proxy-middleware";
 
-import { backendProxy } from "./backendProxy";
-import { EnvironmentStore } from "./EnvironmentStore";
-import log from "./logging";
-import { zone } from "./zone";
+const NEXT_SERVER_URL = `http://localhost:4000`;
+const ROUTES = ["/", "/about"];
 
-const main = async () => {
-  const { isDevelopment, port, hostname } = EnvironmentStore.get();
+const backendWeb = async () => {
+  const app = express();
 
-  const nextServer = next({
-    dev: isDevelopment,
-    hostname,
-    port,
-    dir: "../client",
-  });
-  await nextServer.prepare();
-  const handle = nextServer.getRequestHandler();
+  app.get(ROUTES, createProxyMiddleware({ target: NEXT_SERVER_URL }));
+  app.get("/_next/*", createProxyMiddleware({ target: NEXT_SERVER_URL }));
 
-  const expressServer = express();
-  // We don't want to display "X-Powered-By: Express" in the response header
-  expressServer.disable("x-powered-by");
-
-  expressServer.use(zone);
-  expressServer.use(backendProxy);
-  expressServer.use(cookieParser());
-  expressServer.use(express.json());
-
-  expressServer.post("*", async (req, res) => {
-    // Persist page data
-    fs.writeFileSync(
-      `../${req.body.requestId}.json`,
-      JSON.stringify(req.body.pageData)
-    );
-    // Append the request id to the url
-    const url = new URL(req.url, `https://${req.headers.host}`);
-    url.searchParams.append("requestId", req.body.requestId);
-    // Redirect to the same page
-    return res.redirect(`${url.pathname}${url.search}`);
-  });
-
-  expressServer.get("*", async (req, res) => {
-    return handle(req, res);
-  });
-
-  expressServer.listen(port, () => {
-    log.info(`Express server listening on port ${port}`);
-    log.info(`BACKEND_URL: ${EnvironmentStore.get().BACKEND_URL}`);
-    log.info(`LOCAL_PROD: ${EnvironmentStore.get().isLocalHostedProd}`);
-    log.info(`STATIC_ROOT: ${EnvironmentStore.get().STATIC_ROOT}`);
+  app.listen(4001, () => {
+    // eslint-disable-next-line no-console
+    console.log("backend-web listening on port 4001");
   });
 };
 
-main();
+backendWeb();
