@@ -1,14 +1,15 @@
 "use client";
 
+import { Core } from "@faire/design-tokens";
 import type { ISearchSuggestionResponse } from "@faire/web-api/indigofair/data/ISearchSuggestionResponse";
 import Image from "next/image";
 import Link from "next/link";
+import { styled } from "styled-components";
 
 import { Spacer } from "@/ui/slate/Spacer";
 import { Typography } from "@/ui/slate/Typography";
 
 import Search from "./Search.svg";
-import * as styles from "./styles.css";
 
 const SEARCH_ICON_SIZE = 16;
 
@@ -24,18 +25,16 @@ export const Suggestions: React.FC<Props> = ({
   );
 
   return uniqueSuggestions.length > 0 ? (
-    <div className={styles.container}>
+    <Container>
       {uniqueSuggestions.map((query, index) => (
-        <Link
+        <Suggestion
           key={index}
           href={{
             pathname: "/search",
             search: `?q=${query}`,
           }}
-          className={styles.suggestion}
         >
-          <Image
-            className={styles.icon}
+          <Icon
             src={Search}
             alt="Search icon"
             width={SEARCH_ICON_SIZE}
@@ -43,9 +42,9 @@ export const Suggestions: React.FC<Props> = ({
           />
           <Spacer width="8px" />
           <Typography>{query}</Typography>
-        </Link>
+        </Suggestion>
       ))}
-    </div>
+    </Container>
   ) : null;
 };
 
@@ -53,3 +52,30 @@ const formatSuggestions = <T,>(values: T[]): T[] => {
   const set = new Set(values);
   return Array.from(set).slice(0, 5);
 };
+
+const Container = styled.div`
+  width: 100%;
+  position: absolute;
+  top: 40px;
+  background-color: white;
+  overflow-y: auto;
+  overflow-x: hidden;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 7px 10px;
+`;
+
+const Suggestion = styled(Link)`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 8px 16px;
+  text-decoration: none;
+  &:hover {
+    background-color: ${Core.background.tertiary};
+  }
+`;
+
+const Icon = styled(Image)`
+  padding: 8px;
+  border-radius: 50%;
+  background-color: ${Core.background.tertiary};
+`;
