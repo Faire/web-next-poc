@@ -10,6 +10,9 @@ const nextConfig = {
   images: {
     domains: ["cdn.faire.com"],
   },
+  compiler: {
+    styledComponents: true,
+  },
 };
 
 module.exports = withVanillaExtract(nextConfig);
