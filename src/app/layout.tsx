@@ -1,3 +1,5 @@
+// eslint-disable-next-line import/no-unassigned-import
+import "./index.css";
 import { Providers } from "./Providers";
 import * as styles from "./styles.css";
 import { TopOfPageContent } from "./TopOfPageContent/TopOfPageContent";
