@@ -1,4 +1,3 @@
-import { ILeanProductTile } from "@faire/web-api/indigofair/data/ILeanProductTile";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -13,8 +12,8 @@ const IMAGE_SIZE = 246;
 const LOCK_ICON_SIZE = 16;
 
 type Props = {
-  tile: ILeanProductTile;
-  brand: ILeanProductTile.IBrand;
+  tile: any;
+  brand: any;
 };
 
 export const ProductTile: React.FC<Props> = ({ tile, brand }) => {
@@ -61,6 +60,5 @@ export const ProductTile: React.FC<Props> = ({ tile, brand }) => {
 };
 
 const formatMoney = (amount: number) => {
-  // eslint-disable-next-line @faire/no-dollar-symbol-in-strings
   return `$${(amount / 100).toFixed(2)}`;
 };

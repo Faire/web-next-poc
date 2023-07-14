@@ -1,8 +1,6 @@
-import { Action } from "@faire/design-tokens";
 import { style } from "@vanilla-extract/css";
+import cn from "classnames";
 
-import * as a from "@/ui/Atoms/Atoms";
-import { cn } from "@/ui/cn";
 import { PrimaryButton } from "@/ui/slate/Button.css";
 
 const Z_INDEX = 12;
@@ -14,18 +12,16 @@ export const container = style({
   transition: "transform 200ms linear",
 });
 
-export const banner = cn(
-  a.position("relative"),
-  a.display("flex"),
-  a.justifyContent("center"),
-  a.alignItems("center"),
-  a.backgroundColor("ivory"),
-  a.width("100%"),
-  a.height("48px"),
-  style({
-    zIndex: Z_INDEX,
-  })
-);
+export const banner = style({
+  position: "relative",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  backgroundColor: "#FBF8F6",
+  width: "100%",
+  height: 48,
+  zIndex: Z_INDEX,
+});
 
 export const header = style({
   position: "relative",
@@ -35,10 +31,10 @@ export const header = style({
   alignItems: "stretch",
   flex: "0 0 auto",
   width: "100%",
-  padding: "8px 24px",
+  padding: "12px 24px",
   boxSizing: "border-box",
-  backgroundColor: Action.surface.muted,
-  borderBottom: `1px solid ${Action.border.muted}`,
+  backgroundColor: "white",
+  borderBottom: `1px solid #DFE0E1`,
   transition: "background 0.1s linear",
 });
 
@@ -58,7 +54,7 @@ export const linkContainer = style({
 export const verticalLine = style({
   width: 1,
   height: 24,
-  backgroundColor: Action.border.muted,
+  backgroundColor: "#DFE0E1",
   flexShrink: 0,
   margin: "0 16px",
 });

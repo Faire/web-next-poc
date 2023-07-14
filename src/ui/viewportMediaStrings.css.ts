@@ -1,4 +1,9 @@
-import { MIN_WIDTH_BREAKPOINTS } from "@faire/web/common/media";
+const MIN_WIDTH_BREAKPOINTS = {
+  MOBILE: 0,
+  TABLET: 768,
+  DESKTOP: 1024,
+  XLARGE: 1440,
+};
 
 export const viewportMediaStrings = {
   tablet: `screen and (min-width: ${

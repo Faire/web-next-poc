@@ -4,7 +4,6 @@ import { IViewportSpecifiable } from "./__internal__/IViewportSpecifiable";
 import { viewportUnwrapperUtil } from "./__internal__/viewportUnwrapperUtil";
 import { breakpoints, BreakpointValues } from "./breakpoints";
 
-/* eslint-disable @faire/ban-top-level-request-specific-data */
 export const mobile = viewportUnwrapperUtil("mobile");
 export const mobileAndAbove = viewportUnwrapperUtil("mobileAndAbove");
 export const tablet = viewportUnwrapperUtil("tablet");
@@ -13,7 +12,6 @@ export const tabletAndBelow = viewportUnwrapperUtil("tabletAndBelow");
 export const desktopAndAbove = viewportUnwrapperUtil("desktopAndAbove");
 export const xlarge = viewportUnwrapperUtil("xlarge");
 
-// eslint-disable @typescript-eslint/no-explicit-any
 export const customClass: {
   [key in keyof IViewportSpecifiable]: (content: StyleRule) =>
     | {

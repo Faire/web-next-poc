@@ -1,10 +1,5 @@
+import cn from "classnames";
 import React from "react";
-
-import * as a from "@/ui/Atoms/Atoms";
-import { AtomParam } from "@/ui/Atoms/AtomTypes";
-import { cn } from "@/ui/cn";
-
-import { responsiveAtom, ResponsiveProp } from "../ResponsiveValues";
 
 import { FONT_CLASSNAMES } from "./fonts";
 import * as styles from "./styles.css";
@@ -12,11 +7,8 @@ import { TypographyVariant } from "./types";
 
 type TypographyProps = {
   variant?: TypographyVariant;
-  color?: AtomParam<"color">;
-  align?: ResponsiveProp<AtomParam<"textAlign">>;
+  color?: string;
   truncate?: boolean;
-  maxLines?: AtomParam<"lineClamp">;
-  strikethrough?: boolean;
   "data-test-id"?: string;
 };
 
@@ -46,27 +38,19 @@ interface ParagraphProps
 
 export const Typography: React.FC<
   HeadingProps | SpanProps | ParagraphProps
-  // eslint-disable-next-line complexity
 > = ({
   as,
   variant = "paragraphSansRegular",
-  color = "faireBlack",
-  align,
+  color = "#333333",
   truncate,
-  maxLines,
-  strikethrough,
   ..._props
 }) => {
-  const className = cn(
-    styles[variant],
-    FONT_CLASSNAMES[variant],
-    a.color(color),
-    align && responsiveAtom("textAlign", align),
-    truncate && a.lineClamp(1),
-    maxLines && a.lineClamp(maxLines),
-    strikethrough && a.textDecoration("line-through")
-  );
-  const props = { ..._props, className };
+  const className = cn(styles[variant], FONT_CLASSNAMES[variant]);
+  const style: React.CSSProperties = {
+    color,
+    ...(truncate ? { "-webkit-line-clamp": "1", wordBreak: "break-word" } : {}),
+  };
+  const props = { ..._props, className, style };
 
   if (as) {
     switch (as) {

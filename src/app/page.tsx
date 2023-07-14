@@ -57,7 +57,6 @@ const Home = () => {
             Brands with low minimums
           </Typography>
           <Spacer height="16px" />
-          {/* eslint-disable-next-line @faire/no-dollar-symbol-in-strings */}
           <Typography color="graphite">
             Discover over 30,000 brands with minimums $100 or less.
           </Typography>

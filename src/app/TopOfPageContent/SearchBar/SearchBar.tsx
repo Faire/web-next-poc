@@ -1,21 +1,17 @@
 "use client";
 
-import { Action } from "@faire/design-tokens";
-import fetchSearchSuggestions, {
-  route as searchSuggestionsRoute,
-} from "@faire/web-api/api/v2/search/suggestions/post";
-import { ISearchSuggestionRequest } from "@faire/web-api/indigofair/data/ISearchSuggestionRequest";
-import { useStateWithDebounce } from "@faire/web/ui/hooks/useStateWithDebounce";
 import { useQuery } from "@tanstack/react-query";
+import cn from "classnames";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 
-import { cn } from "@/ui/cn";
 import { FONT_CLASSNAMES } from "@/ui/slate/Typography/fonts";
 import * as TYPOGRAPHY_STYLES from "@/ui/slate/Typography/styles.css";
+import { useStateWithDebounce } from "@/utils/useStateWithDebounce";
 
 import { Suggestions } from "./Suggestions/Suggestions";
+import { fetchSearchSuggestions } from "./utils";
 
 const INPUT_VARIANT = "paragraphSansRegular";
 
@@ -25,13 +21,8 @@ export const SearchBar: React.FC = () => {
   const { value, setValue, debouncedValue } = useStateWithDebounce("", 200);
 
   const { data: suggestions } = useQuery(
-    [searchSuggestionsRoute, debouncedValue],
-    () =>
-      fetchSearchSuggestions(
-        ISearchSuggestionRequest.build({
-          query: debouncedValue,
-        })
-      ),
+    ["api/v2/search/suggestions/post", debouncedValue],
+    () => fetchSearchSuggestions(debouncedValue),
     { enabled: debouncedValue.length > 0, keepPreviousData: true }
   );
 
@@ -77,7 +68,7 @@ const InputContainer = styled.div`
   padding: 1px 16px;
   border-radius: 20px;
   box-sizing: border-box;
-  border: 1px solid ${Action.border.subdued};
+  border: 1px solid #757575;
 `;
 
 const Input = styled.input`
@@ -88,6 +79,6 @@ const Input = styled.input`
   border: none;
   outline: none;
   ::placeholder {
-    color: ${Action.text.subdued};
+    color: #757575;
   }
 `;

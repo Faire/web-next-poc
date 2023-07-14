@@ -1,4 +1,3 @@
-import { Action } from "@faire/design-tokens";
 import { style, keyframes } from "@vanilla-extract/css";
 
 export const container = style({
@@ -25,5 +24,5 @@ export const animatedBackground = style({
 export const staticBackground = style({
   position: "relative",
   overflow: "hidden",
-  backgroundColor: Action.surface.subdued,
+  backgroundColor: "#F7F7F7",
 });

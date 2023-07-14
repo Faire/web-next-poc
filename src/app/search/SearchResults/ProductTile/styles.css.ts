@@ -1,7 +1,6 @@
-import { Action } from "@faire/design-tokens";
 import { style } from "@vanilla-extract/css";
 
-const BORDER = `1px solid ${Action.border.muted}`;
+const BORDER = `1px solid #DFE0E1`;
 
 export const container = style({
   border: BORDER,

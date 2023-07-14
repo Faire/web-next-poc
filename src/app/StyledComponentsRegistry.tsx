@@ -13,7 +13,6 @@ export const StyledComponentsRegistry: React.FC<Props> = ({ children }) => {
   // x-ref: https://reactjs.org/docs/hooks-reference.html#lazy-initial-state
   const [styledComponentsStyleSheet] = useState(() => new ServerStyleSheet());
 
-  // eslint-disable-next-line @faire/no-inline-hoc-fc
   useServerInsertedHTML(() => {
     const styles = styledComponentsStyleSheet.getStyleElement();
     styledComponentsStyleSheet.instance.clearTag();

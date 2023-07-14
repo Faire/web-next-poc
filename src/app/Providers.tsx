@@ -1,6 +1,7 @@
 "use client";
 
-import { QueryClientProvider } from "@faire/web/common/reactQuery";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { useState } from "react";
 
 import { StyledComponentsRegistry } from "./StyledComponentsRegistry";
 
@@ -9,8 +10,9 @@ type Props = {
 };
 
 export const Providers: React.FC<Props> = ({ children }) => {
+  const [client] = useState(() => new QueryClient());
   return (
-    <QueryClientProvider>
+    <QueryClientProvider client={client}>
       <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
     </QueryClientProvider>
   );

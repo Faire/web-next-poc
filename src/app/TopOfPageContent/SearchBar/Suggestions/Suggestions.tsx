@@ -1,7 +1,5 @@
 "use client";
 
-import { Core } from "@faire/design-tokens";
-import type { ISearchSuggestionResponse } from "@faire/web-api/indigofair/data/ISearchSuggestionResponse";
 import Image from "next/image";
 import Link from "next/link";
 import { styled } from "styled-components";
@@ -14,7 +12,7 @@ import Search from "./Search.svg";
 const SEARCH_ICON_SIZE = 16;
 
 type Props = {
-  suggestions: ISearchSuggestionResponse;
+  suggestions: any;
 };
 
 export const Suggestions: React.FC<Props> = ({
@@ -41,7 +39,7 @@ export const Suggestions: React.FC<Props> = ({
             height={SEARCH_ICON_SIZE}
           />
           <Spacer width="8px" />
-          <Typography>{query}</Typography>
+          <Typography>{query as string}</Typography>
         </Suggestion>
       ))}
     </Container>
@@ -70,12 +68,12 @@ const Suggestion = styled(Link)`
   padding: 8px 16px;
   text-decoration: none;
   &:hover {
-    background-color: ${Core.background.tertiary};
+    background-color: "#F7F7F7;
   }
 `;
 
 const Icon = styled(Image)`
   padding: 8px;
   border-radius: 50%;
-  background-color: ${Core.background.tertiary};
+  background-color: "#F7F7F7;
 `;

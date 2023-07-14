@@ -1,5 +1,3 @@
-import { useViewport } from "@faire/web/ui/hooks/useViewport";
-
 import * as a from "@/ui/Atoms/Atoms";
 
 import { IViewportSpecifiable } from "../__internal__/IViewportSpecifiable";
@@ -65,7 +63,7 @@ export const responsiveStyles = (
       React.CSSProperties[key]
     >;
   },
-  viewport: ReturnType<typeof useViewport>
+  viewport: any
 ): React.CSSProperties => {
   if (!styles) {
     return {};
