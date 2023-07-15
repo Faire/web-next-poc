@@ -14,7 +14,7 @@ export const SearchResults: React.FC<Props> = async ({ q }) => {
 
   return (
     <>
-      {productsResponse.product_tiles.map((tile) => (
+      {productsResponse.product_tiles.map((tile: any) => (
         <ProductTile
           key={tile.product?.token}
           tile={tile}

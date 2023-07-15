@@ -15,19 +15,7 @@ import {
   BorderStyle,
   BorderWidth,
 } from "./__internal__/sprinkles/properties/borderProperties.css";
-import {
-  Color,
-  color as colorVariant,
-  backgroundColor as backgroundColorVariant,
-  borderColor as borderColorVariant,
-  borderBlockColor as borderBlockColorVariant,
-  borderInlineColor as borderInlineColorVariant,
-  borderBlockStartColor as borderBlockStartColorVariant,
-  borderBlockEndColor as borderBlockEndColorVariant,
-  borderInlineStartColor as borderInlineStartColorVariant,
-  borderInlineEndColor as borderInlineEndColorVariant,
-  Opacity,
-} from "./__internal__/sprinkles/properties/colorProperties.css";
+import { Opacity } from "./__internal__/sprinkles/properties/colorProperties.css";
 import { Cursor } from "./__internal__/sprinkles/properties/cursorProperties.css";
 import {
   AlignItems,
@@ -130,22 +118,6 @@ export const whiteSpace: ViewportSpecifiableAtom<WhiteSpace> =
   createViewportSpecifiable("whiteSpace");
 export const display: ViewportSpecifiableAtom<Display> =
   createViewportSpecifiable("display");
-export const color: BasicAtom<Color> = (name) => colorVariant[name];
-export const backgroundColor: BasicAtom<Color> = (name) =>
-  backgroundColorVariant[name];
-export const borderColor: BasicAtom<Color> = (name) => borderColorVariant[name];
-export const borderBlockColor: BasicAtom<Color> = (name) =>
-  borderBlockColorVariant[name];
-export const borderInlineColor: BasicAtom<Color> = (name) =>
-  borderInlineColorVariant[name];
-export const borderBlockStartColor: BasicAtom<Color> = (name) =>
-  borderBlockStartColorVariant[name];
-export const borderBlockEndColor: BasicAtom<Color> = (name) =>
-  borderBlockEndColorVariant[name];
-export const borderInlineStartColor: BasicAtom<Color> = (name) =>
-  borderInlineStartColorVariant[name];
-export const borderInlineEndColor: BasicAtom<Color> = (name) =>
-  borderInlineEndColorVariant[name];
 export const flexDirection: ViewportSpecifiableAtom<FlexDirection> =
   createViewportSpecifiable("flexDirection");
 export const flexWrap: ViewportSpecifiableAtom<FlexWrap> =
