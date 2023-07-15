@@ -1,5 +1,4 @@
 {
-  "plugins": ["testing-library"],
   "extends": ["next/core-web-vitals"],
   "parserOptions": {
     "project": ["tsconfig.json"]
