@@ -1,5 +1,5 @@
 {
-  "plugins": ["react-prefer-function-component", "testing-library"],
+  "plugins": ["testing-library"],
   "extends": ["next/core-web-vitals"],
   "parserOptions": {
     "project": ["tsconfig.json"]
