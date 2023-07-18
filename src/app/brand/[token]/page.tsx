@@ -1,7 +1,7 @@
 import { Suspense } from "react";
 
-import { Row } from "@/ui/slate/Layout";
-import { Spacer } from "@/ui/slate/Spacer";
+import { Row } from "@/app/lib/ui/slate/Layout";
+import { Spacer } from "@/app/lib/ui/slate/Spacer";
 
 import { Banner } from "./Banner/Banner";
 import { Panel } from "./Panel/Panel";

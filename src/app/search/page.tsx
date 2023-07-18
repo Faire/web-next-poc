@@ -1,8 +1,8 @@
 import Link from "next/link";
 import { Suspense } from "react";
 
-import { Spacer } from "@/ui/slate/Spacer";
-import { Typography } from "@/ui/slate/Typography";
+import { Spacer } from "@/app/lib/ui/slate/Spacer";
+import { Typography } from "@/app/lib/ui/slate/Typography";
 
 import { LoadingResults } from "./SearchResults/LoadingResults";
 import { SearchResults } from "./SearchResults/SearchResults";

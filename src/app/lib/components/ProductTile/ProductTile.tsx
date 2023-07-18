@@ -2,9 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { IProductTile } from "@/app/lib/types/productTile";
-import { Column, Row } from "@/ui/slate/Layout";
-import { Spacer } from "@/ui/slate/Spacer";
-import { Typography } from "@/ui/slate/Typography";
+import { Column, Row } from "@/app/lib/ui/slate/Layout";
+import { Spacer } from "@/app/lib/ui/slate/Spacer";
+import { Typography } from "@/app/lib/ui/slate/Typography";
 
 import Lock from "./Lock.svg";
 import * as s from "./styles.css";

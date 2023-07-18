@@ -1,4 +1,4 @@
-import { breakpoints } from "@/ui/breakpoints";
+import { breakpoints } from "@/app/lib/ui/breakpoints";
 
 export const responsiveConditions = {
   conditions: {

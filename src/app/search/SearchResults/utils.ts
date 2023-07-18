@@ -1,6 +1,6 @@
 import { headers } from "next/headers";
 
-import { getHeadersList } from "@/utils/headers";
+import { getHeadersList } from "@/app/lib/utils/headers";
 
 export const PAGE_SIZE = 60;
 

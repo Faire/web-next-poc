@@ -1,7 +1,7 @@
 import { style } from "@vanilla-extract/css";
 import cn from "classnames";
 
-import { SecondaryButton } from "@/ui/slate/Button.css";
+import { SecondaryButton } from "@/app/lib/ui/slate/Button.css";
 
 export const body = style({ margin: 0, padding: 0 });
 

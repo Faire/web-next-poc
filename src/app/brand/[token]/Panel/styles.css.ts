@@ -1,7 +1,7 @@
 import { style } from "@vanilla-extract/css";
 import cn from "classnames";
 
-import { PrimaryButton, TertiaryButton } from "@/ui/slate/Button.css";
+import { PrimaryButton, TertiaryButton } from "@/app/lib/ui/slate/Button.css";
 
 export const container = style({
   marginLeft: 56,

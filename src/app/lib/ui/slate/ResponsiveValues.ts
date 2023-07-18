@@ -1,4 +1,4 @@
-import * as a from "@/ui/Atoms/Atoms";
+import * as a from "@/app/lib/ui/Atoms/Atoms";
 
 import { IViewportSpecifiable } from "../__internal__/IViewportSpecifiable";
 import { cn } from "../cn";
