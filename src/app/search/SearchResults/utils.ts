@@ -1,6 +1,6 @@
 import { headers } from "next/headers";
 
-import { getHeadersList } from "@/app/lib/utils/headers";
+import { FAIRE_ACCESS_HEADER, getHeadersList } from "@/app/lib/utils/headers";
 
 export const PAGE_SIZE = 60;
 
@@ -16,7 +16,11 @@ export const searchProducts = async (q: string): Promise<any | null> => {
           page_number: 0,
           page_size: PAGE_SIZE,
         }),
-        headers: { ...headersList, "content-type": "application/json" },
+        headers: {
+          ...headersList,
+          "content-type": "application/json",
+          ...FAIRE_ACCESS_HEADER,
+        },
         referrer: headers().get("referer") ?? undefined,
       }
     );

@@ -1,6 +1,6 @@
 import { headers } from "next/headers";
 
-import { getHeadersList } from "@/app/lib/utils/headers";
+import { FAIRE_ACCESS_HEADER, getHeadersList } from "@/app/lib/utils/headers";
 
 export const fetchProductDetails = async (token: string) => {
   const headersList = getHeadersList(headers());
@@ -8,7 +8,11 @@ export const fetchProductDetails = async (token: string) => {
     const response = await fetch(
       `https://faire-stage.com/api/v2/product/${token}`,
       {
-        headers: { ...headersList, "content-type": "application/json" },
+        headers: {
+          ...headersList,
+          "content-type": "application/json",
+          ...FAIRE_ACCESS_HEADER,
+        },
         referrer: headers().get("referer") ?? undefined,
       }
     );

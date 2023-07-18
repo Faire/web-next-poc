@@ -1,4 +1,5 @@
 import { IImage } from "@/app/lib/types/image";
+import { FAIRE_ACCESS_HEADER } from "@/app/lib/utils/headers";
 
 type FetchFeaturedTilesResponse = {
   product_tiles: {
@@ -14,7 +15,8 @@ export const fetchFeaturedTiles = async (
 ): Promise<FetchFeaturedTilesResponse | null> => {
   try {
     const response = await fetch(
-      `https://faire-stage.com/api/v2/products/search/brand/${token}/featured-lean-product-tiles?timezone=America%2FToronto&pageSize=8&locale=en`
+      `https://faire-stage.com/api/v2/products/search/brand/${token}/featured-lean-product-tiles?timezone=America%2FToronto&pageSize=8&locale=en`,
+      { headers: FAIRE_ACCESS_HEADER }
     );
     return await response.json();
   } catch (error) {

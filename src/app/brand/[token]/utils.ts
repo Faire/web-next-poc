@@ -1,4 +1,5 @@
 import { IImage } from "@/app/lib/types/image";
+import { FAIRE_ACCESS_HEADER } from "@/app/lib/utils/headers";
 
 type FetchBrandResponse = {
   brand: {
@@ -14,7 +15,8 @@ export const fetchBrand = async (
 ): Promise<FetchBrandResponse | null> => {
   try {
     const response = await fetch(
-      `https://faire-stage.com/api/v2/brand-view/${token}`
+      `https://faire-stage.com/api/v2/brand-view/${token}`,
+      { headers: FAIRE_ACCESS_HEADER }
     );
     return await response.json();
   } catch (error) {
