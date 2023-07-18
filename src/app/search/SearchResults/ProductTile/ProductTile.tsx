@@ -50,7 +50,9 @@ export const ProductTile: React.FC<Props> = ({ tile, brand }) => {
           </Row>
         </div>
         <div className={styles.brandNameContainer}>
-          <Typography variant="paragraphSansMedium">{brand.name}</Typography>
+          <Typography variant="paragraphSansMedium">
+            {truncate(brand.name, 29)}
+          </Typography>
         </div>
       </Column>
     </Link>
@@ -59,4 +61,8 @@ export const ProductTile: React.FC<Props> = ({ tile, brand }) => {
 
 const formatMoney = (amount: number) => {
   return `$${(amount / 100).toFixed(2)}`;
+};
+
+const truncate = (str: string, n: number) => {
+  return str.length > n ? str.slice(0, n - 1) + "..." : str;
 };
