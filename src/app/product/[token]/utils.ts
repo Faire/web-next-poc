@@ -1,6 +1,6 @@
 import { headers } from "next/headers";
 
-export const getProductDetails = async (token: string) => {
+export const fetchProductDetails = async (token: string) => {
   const headersList = Array.from(headers().entries()).reduce(
     (acc, [key, value]) => ({
       ...acc,
@@ -18,6 +18,7 @@ export const getProductDetails = async (token: string) => {
     );
     return await response.json();
   } catch (error) {
+    console.error(error);
     return null;
   }
 };

@@ -26,6 +26,7 @@ export const searchProducts = async (q: string): Promise<any | null> => {
     );
     return await response.json();
   } catch (error) {
+    console.error(error);
     return null;
   }
 };

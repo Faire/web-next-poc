@@ -1,5 +1,3 @@
-import { headers } from "next/headers";
-
 export const fetchSearchSuggestions = async (query: string) => {
   try {
     const response = await fetch(
@@ -14,6 +12,7 @@ export const fetchSearchSuggestions = async (query: string) => {
     );
     return await response.json();
   } catch (error) {
+    console.error(error);
     return null;
   }
 };
