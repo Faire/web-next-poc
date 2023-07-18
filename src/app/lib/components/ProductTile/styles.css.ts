@@ -1,9 +1,14 @@
 import { style } from "@vanilla-extract/css";
 
-const BORDER = `1px solid #DFE0E1`;
+export const BORDER = `1px solid #DFE0E1`;
 
 export const container = style({
   border: BORDER,
+});
+
+export const image = style({
+  width: "100%",
+  objectFit: "cover",
 });
 
 export const productDetailsContainer = style({
@@ -12,7 +17,6 @@ export const productDetailsContainer = style({
   padding: 16,
   textDecoration: "none",
   borderTop: BORDER,
-  borderBottom: BORDER,
 });
 
 export const productNameWrapper = style({

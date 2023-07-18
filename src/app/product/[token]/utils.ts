@@ -1,13 +1,9 @@
 import { headers } from "next/headers";
 
+import { getHeadersList } from "@/utils/headers";
+
 export const fetchProductDetails = async (token: string) => {
-  const headersList = Array.from(headers().entries()).reduce(
-    (acc, [key, value]) => ({
-      ...acc,
-      [key]: value,
-    }),
-    {}
-  );
+  const headersList = getHeadersList(headers());
   try {
     const response = await fetch(
       `https://faire-stage.com/api/v2/product/${token}`,

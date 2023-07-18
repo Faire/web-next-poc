@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { IProductTile } from "@/app/lib/types/productTile";
 import { Column, Row } from "@/ui/slate/Layout";
 import { Spacer } from "@/ui/slate/Spacer";
 import { Typography } from "@/ui/slate/Typography";
@@ -8,30 +9,32 @@ import { Typography } from "@/ui/slate/Typography";
 import Lock from "./Lock.svg";
 import * as styles from "./styles.css";
 
-const IMAGE_SIZE = 246;
 const LOCK_ICON_SIZE = 16;
 
 type Props = {
-  tile: any;
-  brand: any;
+  tile: IProductTile;
+  width: number;
+  brand?: { name: string };
 };
 
-export const ProductTile: React.FC<Props> = ({ tile, brand }) => {
-  const product = tile.product!;
+export const ProductTile: React.FC<Props> = ({ tile, width, brand }) => {
   return (
-    <Link href={`/product/${product.token}`}>
+    <Link href={`/product/${tile.product.token}`}>
       <Column align="center" className={styles.container}>
         <Image
+          className={styles.image}
           src={tile.best_image?.url ?? ""}
-          width={IMAGE_SIZE}
-          height={IMAGE_SIZE}
           alt="Product Image"
-          style={{ objectFit: "cover" }}
+          width={width}
+          height={width}
         />
-        <div className={styles.productDetailsContainer}>
+        <div
+          className={styles.productDetailsContainer}
+          style={brand ? { borderBottom: styles.BORDER } : {}}
+        >
           <div className={styles.productNameWrapper}>
             <Typography variant="paragraphSansMedium">
-              {product.name}
+              {truncate(tile.product.name, 40)}
             </Typography>
           </div>
           <Spacer height="4px" />
@@ -49,11 +52,13 @@ export const ProductTile: React.FC<Props> = ({ tile, brand }) => {
             />
           </Row>
         </div>
-        <div className={styles.brandNameContainer}>
-          <Typography variant="paragraphSansMedium">
-            {truncate(brand.name, 29)}
-          </Typography>
-        </div>
+        {brand ? (
+          <div className={styles.brandNameContainer}>
+            <Typography variant="paragraphSansMedium">
+              {truncate(brand.name, 29)}
+            </Typography>
+          </div>
+        ) : null}
       </Column>
     </Link>
   );

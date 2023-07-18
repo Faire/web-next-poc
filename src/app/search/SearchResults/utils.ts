@@ -1,15 +1,11 @@
 import { headers } from "next/headers";
 
+import { getHeadersList } from "@/utils/headers";
+
 export const PAGE_SIZE = 60;
 
 export const searchProducts = async (q: string): Promise<any | null> => {
-  const headersList = Array.from(headers().entries()).reduce(
-    (acc, [key, value]) => ({
-      ...acc,
-      [key]: value,
-    }),
-    {}
-  );
+  const headersList = getHeadersList(headers());
   try {
     const response = await fetch(
       "http://localhost:4000/api/v2/search/products",
