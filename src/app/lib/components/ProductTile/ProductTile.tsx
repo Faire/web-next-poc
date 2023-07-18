@@ -7,7 +7,7 @@ import { Spacer } from "@/ui/slate/Spacer";
 import { Typography } from "@/ui/slate/Typography";
 
 import Lock from "./Lock.svg";
-import * as styles from "./styles.css";
+import * as s from "./styles.css";
 
 const LOCK_ICON_SIZE = 16;
 
@@ -20,19 +20,19 @@ type Props = {
 export const ProductTile: React.FC<Props> = ({ tile, width, brand }) => {
   return (
     <Link href={`/product/${tile.product.token}`}>
-      <Column align="center" className={styles.container}>
+      <Column align="center" className={s.container}>
         <Image
-          className={styles.image}
+          className={s.image}
           src={tile.best_image?.url ?? ""}
           alt="Product Image"
           width={width}
           height={width}
         />
         <div
-          className={styles.productDetailsContainer}
-          style={brand ? { borderBottom: styles.BORDER } : {}}
+          className={s.productDetailsContainer}
+          style={brand ? { borderBottom: s.BORDER } : {}}
         >
-          <div className={styles.productNameWrapper}>
+          <div className={s.productNameWrapper}>
             <Typography variant="paragraphSansMedium">
               {truncate(tile.product.name, 40)}
             </Typography>
@@ -53,7 +53,7 @@ export const ProductTile: React.FC<Props> = ({ tile, width, brand }) => {
           </Row>
         </div>
         {brand ? (
-          <div className={styles.brandNameContainer}>
+          <div className={s.brandNameContainer}>
             <Typography variant="paragraphSansMedium">
               {truncate(brand.name, 29)}
             </Typography>

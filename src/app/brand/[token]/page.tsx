@@ -5,7 +5,7 @@ import { Spacer } from "@/ui/slate/Spacer";
 
 import { Banner } from "./Banner/Banner";
 import { Panel } from "./Panel/Panel";
-import * as styles from "./styles.css";
+import * as s from "./styles.css";
 import { LoadingTiles } from "./Tiles/LoadingTiles";
 import { Tiles } from "./Tiles/Tiles";
 import { fetchBrand } from "./utils";
@@ -33,12 +33,12 @@ const Page: React.FC<Props> = async ({ params: { token } }) => {
   const { name, description, banner_image, profile_image } = response.brand;
 
   return (
-    <div className={styles.container}>
+    <div className={s.container}>
       <Banner {...{ banner_image, profile_image }} />
       <Row>
         <Panel {...{ name, description }} />
         <Spacer width="32px" />
-        <div className={styles.grid}>
+        <div className={s.grid}>
           <Suspense fallback={<LoadingTiles />}>
             <Tiles {...{ token }} />
           </Suspense>

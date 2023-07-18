@@ -5,19 +5,19 @@ import { Spacer } from "@/ui/slate/Spacer";
 import { Typography } from "@/ui/slate/Typography";
 
 import { SearchBar } from "./SearchBar/SearchBar";
-import * as styles from "./styles.css";
+import * as s from "./styles.css";
 
 export const TopOfPageContent: React.FC = () => {
   return (
-    <div className={styles.container}>
-      <div className={styles.banner}>
+    <div className={s.container}>
+      <div className={s.banner}>
         <Typography color="graphite">
           Shop wholesale online from over 100,000 brands.{" "}
           <Link href="/">Sign up</Link>
         </Typography>
       </div>
-      <header className={styles.header}>
-        <div className={styles.content}>
+      <header className={s.header}>
+        <div className={s.content}>
           <Link href="/">
             <Image
               src="https://cdn.faire.com/static/logo.svg"
@@ -28,19 +28,19 @@ export const TopOfPageContent: React.FC = () => {
           </Link>
           <Spacer width="24px" />
           <SearchBar />
-          <div className={styles.linkContainer}>
+          <div className={s.linkContainer}>
             <Spacer width="16px" />
-            <div className={styles.verticalLine} />
+            <div className={s.verticalLine} />
             <Spacer width="16px" />
-            <Link className={styles.link} href="/">
+            <Link className={s.link} href="/">
               <Typography>Sell on Faire</Typography>
             </Link>
             <Spacer width="24px" />
-            <Link className={styles.link} href="/">
+            <Link className={s.link} href="/">
               <Typography>Sign In</Typography>
             </Link>
             <Spacer width="24px" />
-            <Link className={styles.signUpButton} href="/">
+            <Link className={s.signUpButton} href="/">
               <Typography color="white">Sign Up to Shop</Typography>
             </Link>
           </div>

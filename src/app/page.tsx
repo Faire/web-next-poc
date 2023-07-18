@@ -4,21 +4,21 @@ import Link from "next/link";
 import { Spacer } from "@/ui/slate/Spacer";
 import { Typography } from "@/ui/slate/Typography";
 
-import * as styles from "./styles.css";
+import * as s from "./styles.css";
 
 const Home = () => {
   return (
     <main>
       {/* Hero */}
-      <div className={styles.hero.container}>
+      <div className={s.hero.container}>
         <Image
-          className={styles.hero.image}
+          className={s.hero.image}
           src="https://cdn.faire.com/fastly/loggedOutHomePage/hero_xlarge.jpeg"
           alt="Hero image"
           fill
           priority
         />
-        <div className={styles.hero.overlay}>
+        <div className={s.hero.overlay}>
           <Typography variant="displayLSerifRegular" color="white">
             Your one-stop shop for wholesale
           </Typography>
@@ -27,18 +27,18 @@ const Home = () => {
             Shop over <b>100,000</b> independent brands, all in one place
           </Typography>
           <Spacer height="24px" />
-          <Link className={styles.hero.button} href="/">
+          <Link className={s.hero.button} href="/">
             <Typography>Sign Up to Shop</Typography>
           </Link>
           <Spacer height="16px" />
-          <Link className={styles.hero.button} href="/">
+          <Link className={s.hero.button} href="/">
             <Typography>Sell on Faire</Typography>
           </Link>
         </div>
       </div>
       {/* Value Props */}
-      <div className={styles.values.container}>
-        <div className={styles.values.item}>
+      <div className={s.values.container}>
+        <div className={s.values.item}>
           <Typography variant="displaySSerifRegular">
             Flexible payment terms
           </Typography>
@@ -52,7 +52,7 @@ const Home = () => {
           </Link>
         </div>
         <Spacer width="40px" />
-        <div className={styles.values.item}>
+        <div className={s.values.item}>
           <Typography variant="displaySSerifRegular">
             Brands with low minimums
           </Typography>
@@ -66,7 +66,7 @@ const Home = () => {
           </Link>
         </div>
         <Spacer width="40px" />
-        <div className={styles.values.item}>
+        <div className={s.values.item}>
           <Typography variant="displaySSerifRegular">
             Free returns on opening orders
           </Typography>

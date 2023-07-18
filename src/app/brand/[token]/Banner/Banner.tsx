@@ -2,7 +2,7 @@ import Image from "next/image";
 
 import { IImage } from "@/app/lib/types/image";
 
-import * as styles from "./styles.css";
+import * as s from "./styles.css";
 
 type Props = {
   banner_image: IImage;
@@ -14,21 +14,21 @@ export const Banner: React.FC<Props> = async ({
   profile_image,
 }) => {
   return (
-    <div className={styles.container}>
+    <div className={s.container}>
       <Image
-        className={styles.banner}
+        className={s.banner}
         src={banner_image.url}
         alt="Banner image"
-        width={styles.BANNER_DIMENSIONS.width}
-        height={styles.BANNER_DIMENSIONS.height}
+        width={s.BANNER_DIMENSIONS.width}
+        height={s.BANNER_DIMENSIONS.height}
         priority
       />
       <Image
-        className={styles.profileImage}
+        className={s.profileImage}
         src={profile_image.url}
         alt="Profile image"
-        width={styles.PROFILE_IMAGE_SIZE}
-        height={styles.PROFILE_IMAGE_SIZE}
+        width={s.PROFILE_IMAGE_SIZE}
+        height={s.PROFILE_IMAGE_SIZE}
         priority
       />
     </div>

@@ -6,7 +6,7 @@ import { Typography } from "@/ui/slate/Typography";
 
 import { LoadingResults } from "./SearchResults/LoadingResults";
 import { SearchResults } from "./SearchResults/SearchResults";
-import * as styles from "./styles.css";
+import * as s from "./styles.css";
 
 type Props = {
   searchParams: {
@@ -16,7 +16,7 @@ type Props = {
 
 const Search: React.FC<Props> = async ({ searchParams: { q } }) => {
   return (
-    <div className={styles.container}>
+    <div className={s.container}>
       <Typography>
         <Link href="/">Home</Link> / &quot;{q}&quot;
       </Typography>
@@ -25,7 +25,7 @@ const Search: React.FC<Props> = async ({ searchParams: { q } }) => {
       <Spacer height="8px" />
       <Typography>Results for {q}</Typography>
       <Spacer height="24px" />
-      <div className={styles.grid}>
+      <div className={s.grid}>
         <Suspense fallback={<LoadingResults />}>
           <SearchResults q={q} />
         </Suspense>

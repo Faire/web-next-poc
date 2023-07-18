@@ -2,7 +2,7 @@ import cn from "classnames";
 import React from "react";
 
 import { FONT_CLASSNAMES } from "./fonts";
-import * as styles from "./styles.css";
+import * as s from "./styles.css";
 import { TypographyVariant } from "./types";
 
 type TypographyProps = {
@@ -43,7 +43,7 @@ export const Typography: React.FC<
   color = "#333333",
   ..._props
 }) => {
-  const className = cn(styles[variant], FONT_CLASSNAMES[variant]);
+  const className = cn(s[variant], FONT_CLASSNAMES[variant]);
   const style: React.CSSProperties = {
     color,
   };
