@@ -8,7 +8,6 @@ import { TypographyVariant } from "./types";
 type TypographyProps = {
   variant?: TypographyVariant;
   color?: string;
-  truncate?: boolean;
   "data-test-id"?: string;
 };
 
@@ -42,13 +41,11 @@ export const Typography: React.FC<
   as,
   variant = "paragraphSansRegular",
   color = "#333333",
-  truncate,
   ..._props
 }) => {
   const className = cn(styles[variant], FONT_CLASSNAMES[variant]);
   const style: React.CSSProperties = {
     color,
-    ...(truncate ? { "-webkit-line-clamp": "1", wordBreak: "break-word" } : {}),
   };
   const props = { ..._props, className, style };
 

@@ -50,9 +50,7 @@ export const ProductTile: React.FC<Props> = ({ tile, brand }) => {
           </Row>
         </div>
         <div className={styles.brandNameContainer}>
-          <Typography variant="paragraphSansMedium" truncate>
-            {brand.name}
-          </Typography>
+          <Typography variant="paragraphSansMedium">{brand.name}</Typography>
         </div>
       </Column>
     </Link>
