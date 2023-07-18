@@ -18,7 +18,7 @@ const Search: React.FC<Props> = async ({ searchParams: { q } }) => {
   return (
     <div className={styles.container}>
       <Typography>
-        <Link href="/">Home</Link> / "{q}"
+        <Link href="/">Home</Link> / &quot;{q}&quot;
       </Typography>
       <Spacer height="24px" />
       <Typography variant="pageHeaderSerifRegular">Wholesale {q}</Typography>

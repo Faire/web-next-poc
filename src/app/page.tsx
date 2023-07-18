@@ -72,8 +72,9 @@ const Home = () => {
           </Typography>
           <Spacer height="16px" />
           <Typography color="graphite">
-            We'll give you a prepaid shipping label in case you'd like to send
-            products back.
+            {
+              "We'll give you a prepaid shipping label in case you'd like to send products back."
+            }
           </Typography>
           <Spacer height="16px" />
           <Link href="/">
