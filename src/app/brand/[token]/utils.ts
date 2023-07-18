@@ -14,7 +14,7 @@ export const fetchBrand = async (
 ): Promise<FetchBrandResponse | null> => {
   try {
     const response = await fetch(
-      `http://localhost:4000/api/v2/brand-view/${token}`
+      `https://faire-stage.com/api/v2/brand-view/${token}`
     );
     return await response.json();
   } catch (error) {

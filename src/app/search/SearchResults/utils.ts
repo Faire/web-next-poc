@@ -8,7 +8,7 @@ export const searchProducts = async (q: string): Promise<any | null> => {
   const headersList = getHeadersList(headers());
   try {
     const response = await fetch(
-      "http://localhost:4000/api/v2/search/products",
+      "https://faire-stage.com/api/v2/search/products",
       {
         method: "POST",
         body: JSON.stringify({

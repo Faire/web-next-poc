@@ -14,7 +14,7 @@ export const fetchFeaturedTiles = async (
 ): Promise<FetchFeaturedTilesResponse | null> => {
   try {
     const response = await fetch(
-      `http://localhost:4000/api/v2/products/search/brand/${token}/featured-lean-product-tiles?timezone=America%2FToronto&pageSize=8&locale=en`
+      `https://faire-stage.com/api/v2/products/search/brand/${token}/featured-lean-product-tiles?timezone=America%2FToronto&pageSize=8&locale=en`
     );
     return await response.json();
   } catch (error) {
