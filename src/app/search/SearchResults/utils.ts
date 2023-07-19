@@ -1,18 +1,14 @@
 import { headers } from "next/headers";
 
+import { FAIRE_ACCESS_HEADER, getHeadersList } from "@/app/lib/utils/headers";
+
 export const PAGE_SIZE = 60;
 
 export const searchProducts = async (q: string): Promise<any | null> => {
-  const headersList = Array.from(headers().entries()).reduce(
-    (acc, [key, value]) => ({
-      ...acc,
-      [key]: value,
-    }),
-    {}
-  );
+  const headersList = getHeadersList(headers());
   try {
     const response = await fetch(
-      "http://localhost:4000/api/v2/search/products",
+      "https://faire-stage.com/api/v2/search/products",
       {
         method: "POST",
         body: JSON.stringify({
@@ -20,12 +16,17 @@ export const searchProducts = async (q: string): Promise<any | null> => {
           page_number: 0,
           page_size: PAGE_SIZE,
         }),
-        headers: { ...headersList, "content-type": "application/json" },
+        headers: {
+          ...headersList,
+          "content-type": "application/json",
+          ...FAIRE_ACCESS_HEADER,
+        },
         referrer: headers().get("referer") ?? undefined,
       }
     );
     return await response.json();
   } catch (error) {
+    console.error(error);
     return null;
   }
 };

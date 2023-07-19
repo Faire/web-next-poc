@@ -65,7 +65,6 @@ import {
 } from "./__internal__/sprinkles/properties/transitionProperties.css";
 import { sprinkles } from "./__internal__/sprinkles/sprinkles.css";
 
-/* eslint-disable @faire/ban-top-level-request-specific-data */
 export const marginTop: ViewportSpecifiableAtom<Margin> =
   createViewportSpecifiable("marginTop");
 export const marginBottom: ViewportSpecifiableAtom<Margin> =

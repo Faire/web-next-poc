@@ -1,7 +1,7 @@
 import { style } from "@vanilla-extract/css";
 import cn from "classnames";
 
-import { PrimaryButton } from "@/ui/slate/Button.css";
+import { PrimaryButton } from "@/app/lib/ui/slate/Button.css";
 
 const Z_INDEX = 12;
 

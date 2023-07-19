@@ -1,7 +1,7 @@
 // eslint-disable-next-line import/no-unassigned-import
 import "./index.css";
 import { Providers } from "./Providers";
-import * as styles from "./styles.css";
+import * as s from "./styles.css";
 import { TopOfPageContent } from "./TopOfPageContent/TopOfPageContent";
 
 export const metadata = {
@@ -12,7 +12,7 @@ export const metadata = {
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="en">
-      <body className={styles.body}>
+      <body className={s.body}>
         <Providers>
           <TopOfPageContent />
           {children}

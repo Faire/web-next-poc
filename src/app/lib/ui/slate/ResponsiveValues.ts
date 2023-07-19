@@ -1,4 +1,4 @@
-import * as a from "@/ui/Atoms/Atoms";
+import * as a from "@/app/lib/ui/Atoms/Atoms";
 
 import { IViewportSpecifiable } from "../__internal__/IViewportSpecifiable";
 import { cn } from "../cn";
@@ -13,7 +13,6 @@ export type ResponsiveValues<T> = {
 
 export type ResponsiveProp<T> = T | ResponsiveValues<T>;
 
-/* eslint-disable-next-line @typescript-eslint/no-explicit-any */
 const isResponsiveValue = (value: any): value is ResponsiveValues<any> => {
   if (typeof value !== "object") {
     return false;
@@ -22,7 +21,6 @@ const isResponsiveValue = (value: any): value is ResponsiveValues<any> => {
 };
 
 type GetType<T> = {
-  /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
   [K in keyof T]: T[K] extends (...args: any) => any ? ReturnType<T[K]> : T[K];
 };
 type IViewportSpecifiableFrom<T> = Pick<

@@ -1,6 +1,6 @@
 import cn from "classnames";
 
-import * as styles from "./styles.css";
+import * as s from "./styles.css";
 
 type Props = {
   /**
@@ -43,15 +43,15 @@ export const LoadingSkeleton: React.FC<Props> = ({
     borderRadius,
     aspectRatio,
   };
-  const containerClassName = cn(styles.container, className);
+  const containerClassName = cn(s.container, className);
   return (
     <div
       className={containerClassName}
       data-test-id={dataTestId}
       {...{ style }}
     >
-      <div className={styles.staticBackground} {...{ style }}>
-        <div className={styles.animatedBackground} {...{ style }} />
+      <div className={s.staticBackground} {...{ style }}>
+        <div className={s.animatedBackground} {...{ style }} />
       </div>
     </div>
   );

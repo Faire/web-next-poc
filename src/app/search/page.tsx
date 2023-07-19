@@ -1,12 +1,12 @@
 import Link from "next/link";
 import { Suspense } from "react";
 
-import { Spacer } from "@/ui/slate/Spacer";
-import { Typography } from "@/ui/slate/Typography";
+import { Spacer } from "@/app/lib/ui/slate/Spacer";
+import { Typography } from "@/app/lib/ui/slate/Typography";
 
 import { LoadingResults } from "./SearchResults/LoadingResults";
 import { SearchResults } from "./SearchResults/SearchResults";
-import * as styles from "./styles.css";
+import * as s from "./styles.css";
 
 type Props = {
   searchParams: {
@@ -16,16 +16,16 @@ type Props = {
 
 const Search: React.FC<Props> = async ({ searchParams: { q } }) => {
   return (
-    <div className={styles.container}>
+    <div className={s.container}>
       <Typography>
-        <Link href="/">Home</Link> / "{q}"
+        <Link href="/">Home</Link> / &quot;{q}&quot;
       </Typography>
       <Spacer height="24px" />
       <Typography variant="pageHeaderSerifRegular">Wholesale {q}</Typography>
       <Spacer height="8px" />
       <Typography>Results for {q}</Typography>
       <Spacer height="24px" />
-      <div className={styles.grid}>
+      <div className={s.grid}>
         <Suspense fallback={<LoadingResults />}>
           <SearchResults q={q} />
         </Suspense>

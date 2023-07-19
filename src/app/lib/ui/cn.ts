@@ -2,7 +2,6 @@ import classNames from "classnames";
 
 import { IViewportSpecifiable } from "./__internal__/IViewportSpecifiable";
 
-/* eslint-disable @typescript-eslint/no-empty-interface */
 type Value = string | number | boolean | undefined | null;
 type Mapping = Record<string, unknown>;
 interface ArgumentArray extends Array<Argument | IViewportSpecifiable> {}

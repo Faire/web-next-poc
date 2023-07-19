@@ -1,4 +1,5 @@
-import { ProductTile } from "./ProductTile/ProductTile";
+import { ProductTile } from "@/app/lib/components/ProductTile/ProductTile";
+
 import { searchProducts } from "./utils";
 
 type Props = {
@@ -18,6 +19,7 @@ export const SearchResults: React.FC<Props> = async ({ q }) => {
         <ProductTile
           key={tile.product?.token}
           tile={tile}
+          width={246}
           brand={
             productsResponse.brands_by_token[tile.product?.brand_token ?? ""]!
           }
