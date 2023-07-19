@@ -2,6 +2,7 @@ import { ReadonlyHeaders } from "next/dist/server/web/spec-extension/adapters/he
 
 export const FAIRE_ACCESS_HEADER = {
   "x-faire-deco-access-token": process.env.FAIRE_ACCESS_TOKEN || "",
+  "X-If-Setting": '{"BLOCK_STAGING_ACCESS":"false"}',
 };
 
 export const getHeadersList = (headers: ReadonlyHeaders) =>
