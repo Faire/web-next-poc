@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import * as a from "@/app/lib/ui/Atoms/Atoms";
+import * as a from "@/app/_lib/ui/Atoms/Atoms";
 
 import { AtomParam } from "../Atoms/AtomTypes";
 import { cn } from "../cn";

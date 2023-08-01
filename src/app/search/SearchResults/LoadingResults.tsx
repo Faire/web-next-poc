@@ -1,4 +1,4 @@
-import { LoadingSkeleton } from "@/app/lib/ui/slate/LoadingSkeleton";
+import { LoadingSkeleton } from "@/app/_lib/ui/slate/LoadingSkeleton";
 
 import { NUMBER_OF_COLUMNS } from "../styles.css";
 

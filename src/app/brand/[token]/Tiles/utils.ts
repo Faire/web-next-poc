@@ -1,5 +1,5 @@
-import { IImage } from "@/app/lib/types/image";
-import { FAIRE_ACCESS_HEADER } from "@/app/lib/utils/headers";
+import { IImage } from "@/app/_lib/types/image";
+import { FAIRE_ACCESS_HEADER } from "@/app/_lib/utils/headers";
 
 type FetchFeaturedTilesResponse = {
   product_tiles: {

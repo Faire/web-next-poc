@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import { IImage } from "@/app/lib/types/image";
+import { IImage } from "@/app/_lib/types/image";
 
 import * as s from "./styles.css";
 

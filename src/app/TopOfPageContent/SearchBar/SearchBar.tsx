@@ -6,9 +6,9 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 
-import { FONT_CLASSNAMES } from "@/app/lib/ui/slate/Typography/fonts";
-import * as TYPOGRAPHY_STYLES from "@/app/lib/ui/slate/Typography/styles.css";
-import { useStateWithDebounce } from "@/app/lib/utils/useStateWithDebounce";
+import { FONT_CLASSNAMES } from "@/app/_lib/ui/slate/Typography/fonts";
+import * as TYPOGRAPHY_STYLES from "@/app/_lib/ui/slate/Typography/styles.css";
+import { useStateWithDebounce } from "@/app/_lib/utils/useStateWithDebounce";
 
 import { Suggestions } from "./Suggestions/Suggestions";
 import { fetchSearchSuggestions } from "./utils";

@@ -1,6 +1,6 @@
 import { headers } from "next/headers";
 
-import { FAIRE_ACCESS_HEADER, getHeadersList } from "@/app/lib/utils/headers";
+import { FAIRE_ACCESS_HEADER, getHeadersList } from "@/app/_lib/utils/headers";
 
 export const PAGE_SIZE = 60;
 

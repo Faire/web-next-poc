@@ -1,4 +1,4 @@
-import { ProductTile } from "@/app/lib/components/ProductTile/ProductTile";
+import { ProductTile } from "@/app/_lib/components/ProductTile/ProductTile";
 
 import { searchProducts } from "./utils";
 

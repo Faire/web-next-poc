@@ -4,8 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { styled } from "styled-components";
 
-import { Spacer } from "@/app/lib/ui/slate/Spacer";
-import { Typography } from "@/app/lib/ui/slate/Typography";
+import { Spacer } from "@/app/_lib/ui/slate/Spacer";
+import { Typography } from "@/app/_lib/ui/slate/Typography";
 
 import Search from "./Search.svg";
 
