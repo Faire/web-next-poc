@@ -1,7 +1,7 @@
 export const fetchSearchSuggestions = async (query: string) => {
   try {
     const response = await fetch(
-      `https://faire-stage.com/api/v2/search/suggestions`,
+      `http://localhost:4000/api/v2/search/suggestions`,
       {
         method: "POST",
         body: JSON.stringify({

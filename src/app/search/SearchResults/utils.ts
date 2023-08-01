@@ -1,6 +1,6 @@
 import { headers } from "next/headers";
 
-import { FAIRE_ACCESS_HEADER, getHeadersList } from "@/app/_lib/utils/headers";
+import { getHeadersList } from "@/app/_lib/utils/headers";
 
 export const PAGE_SIZE = 60;
 
@@ -8,7 +8,7 @@ export const searchProducts = async (q: string): Promise<any | null> => {
   const headersList = getHeadersList(headers());
   try {
     const response = await fetch(
-      "https://faire-stage.com/api/v2/search/products",
+      "http://localhost:4000/api/v2/search/products",
       {
         method: "POST",
         body: JSON.stringify({
@@ -19,7 +19,6 @@ export const searchProducts = async (q: string): Promise<any | null> => {
         headers: {
           ...headersList,
           "content-type": "application/json",
-          ...FAIRE_ACCESS_HEADER,
         },
         referrer: headers().get("referer") ?? undefined,
       }

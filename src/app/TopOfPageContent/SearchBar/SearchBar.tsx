@@ -39,7 +39,7 @@ export const SearchBar: React.FC = () => {
     setValue(event.target.value);
 
   return (
-    <Container>
+    <Container style={{ width: "100%" }}>
       <InputContainer>
         <Input
           className={cn(
@@ -59,7 +59,6 @@ export const SearchBar: React.FC = () => {
 };
 
 const Container = styled.div`
-  width: 100%;
   position: relative;
 `;
 
